@@ -28,17 +28,17 @@ Run the main script to preprocess data, engineer features, train the model, and 
 
 2. Train the model:
    ```
-   python scripts/train_model.py
+   python src/train_model.py
    ```
 
 3. Evaluate the model:
    ```
-   python scripts/evaluate_model.py
+   python src/evaluate_model.py
    ```
 
 4. Make predictions:
    ```
-   python scripts/predict.py
+   python src/predict.py
 
 ## Key Components
 - Data Preprocessing
