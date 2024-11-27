@@ -1,4 +1,4 @@
-# Ecommerce Churn Prediction Project
+# E-Commerce Churn Prediction Project
 
 ## Overview
 This project implements an end-to-end machine learning solution for predicting customer churn in an ecommerce setting using Gradient Boosting (XGBoost).
