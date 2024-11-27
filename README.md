@@ -20,9 +20,25 @@ pip install -r requirements.txt
 
 ## Usage
 Run the main script to preprocess data, engineer features, train the model, and evaluate performance:
-```bash
-python main.py
-```
+
+1. Install dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
+
+2. Train the model:
+   ```
+   python scripts/train_model.py
+   ```
+
+3. Evaluate the model:
+   ```
+   python scripts/evaluate_model.py
+   ```
+
+4. Make predictions:
+   ```
+   python scripts/predict.py
 
 ## Key Components
 - Data Preprocessing
