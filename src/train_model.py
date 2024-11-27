@@ -2,11 +2,19 @@
 import joblib
 from xgboost import XGBClassifier
 from sklearn.metrics import accuracy_score, classification_report
+import os
+print(os.getcwd())
 
-from scripts.preprocess import load_data, preprocess_data, split_data
+from preprocess import load_data,  preprocess_data, split_data
 
 def train_model(data_path, model_path):
     """Train a Gradient Boosting model."""
+    # Ensure the directory for the model exist
+    model_dir = os.path.dirname(model_path)
+    if not os.path.exists(model_dir):
+        os.makedirs(model_dir)
+        print(f"Created directory: {model_dir}")
+
     # Load and preprocess data
     df = load_data(data_path)
     features, target = preprocess_data(df)
@@ -18,6 +26,7 @@ def train_model(data_path, model_path):
 
     # Save model
     joblib.dump(model, model_path)
+    print(f"Model saved at: {model_path}")
 
     # Evaluate model
     y_pred = model.predict(X_test)
@@ -25,4 +34,4 @@ def train_model(data_path, model_path):
     print("Classification Report:\n", classification_report(y_test, y_pred))
 
 if __name__ == "__main__":
-    train_model("data/ecommerce_churn_data.csv", "models/churn_model.pkl")
+    train_model("Data/E Commerce Dataset.xlsx", "models/churn_model.pkl")
